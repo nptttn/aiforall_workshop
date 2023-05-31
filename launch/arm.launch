@@ -1,0 +1,9 @@
+<launch>
+
+    <param name="robot_description" command="cat /home/pat/work_ws/aiforall_ws/src/your_package/urdf/arm_test.urdf" />
+    <node name="arm_driver" pkg="your_package" type="arm_driver.py" />
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+        <remap from="/joint_states" to="/AiForAll/manipulation/go_joint_states" />
+    </node>
+
+</launch>
